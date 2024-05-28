@@ -6,7 +6,6 @@ import seaborn as sns
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
-from st_aggrid import AgGrid
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pickle
 from st_ant_statistic import st_ant_statistic
