@@ -11,9 +11,10 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pickle
 from st_ant_statistic import st_ant_statistic
 
-# Load the service account credentials
-credentials = ServiceAccountCredentials.from_json_keyfile_name('third-389406-64c6878c09d9.json', ['https://www.googleapis.com/auth/spreadsheets',
-         'https://www.googleapis.com/auth/drive'])
+# Load the service account credentials from Streamlit secrets
+credentials_dict = st.secrets["google_credentials"]
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, ['https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive'])
 
 # Authenticate with the Google Sheets API
 gc = gspread.authorize(credentials)
