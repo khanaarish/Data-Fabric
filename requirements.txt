@@ -1,0 +1,10 @@
+streamlit
+gspread
+oauth2client
+pandas
+seaborn
+plotly
+matplotlib
+streamlit-option-menu
+st-aggrid
+st-ant-statistic
