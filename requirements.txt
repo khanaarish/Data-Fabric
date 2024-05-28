@@ -8,3 +8,4 @@ matplotlib
 streamlit-option-menu
 streamlit-aggrid
 st-ant-statistic
+scikit-learn
