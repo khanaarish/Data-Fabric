@@ -25,9 +25,9 @@ with st.sidebar:
     selected = option_menu('Tiranga Textiles',
                            
                            ['Taka Production',
-                            'Karigar Performance','Prediction'],
+                            'Karigar Performance'],
                            
-                           icons = ['activity', 'bi bi-person-gear', 'bi bi-crosshair'],
+                           icons = ['activity', 'bi bi-person-gear'],
                            
                            default_index=0)
 
@@ -464,53 +464,6 @@ if (selected == 'Karigar Performance'):
         # Display the pie chart using Streamlit
         st.plotly_chart(fig)
 
-# Assuming your model is saved in 'model.pkl' in the same directory
-with open('prod.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-if selected == 'Prediction':
-    st.title('Predict the Production on 10th and 25th')
-
-    # Taking user inputs
-    year = st.number_input('Year', min_value=2020, max_value=2030, value=2026)
-    month = st.number_input('Month', min_value=1, max_value=12, value=11)
-    day = st.selectbox('Day',[10,25])
-    taka = st.number_input('Taka', min_value=1, value=2)
-
-
-    
-    
-    
-    
-    # Create a button for prediction
-    if st.button('Predict Production'):
-        input_data = {'Year': [year],
-                      'Month': [month],
-                      'Day': [day],
-                      'Taka': [taka]}
-        
-        input_df = pd.DataFrame(input_data)
-        
-        # Making a prediction
-        predicted_total = model.predict(input_df)
-        
-        # Display the predicted total
-        st.write(f"Predicted 'Total of 15 days': {predicted_total[0]}")
-        st.write(f"Predicted Meter of Fabric made: {predicted_total[0]*110}")
-        meter = predicted_total*110
-        rev = meter*3.80
-        st.write(f"Predicted Revenue at this production is ': {rev} Rupees")
-
-        # st_ant_statistic(
-        # title="Revenue",
-        # value=rev,
-        # prefix="<i class='fa fa-check' aria-hidden='true'></i>",
-        # precision=2,
-        # decimalSeperator=",",
-        # card=True,
-        # cardStyle={"width":"25%", "background-color":"#f5f5f5", "border-radius":"10px", "border-color":"black", "margin":"10px"},
-        # height=200)
-        
 
 
 
