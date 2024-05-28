@@ -6,5 +6,5 @@ seaborn
 plotly
 matplotlib
 streamlit-option-menu
-st-aggrid
+streamlit-aggrid
 st-ant-statistic
