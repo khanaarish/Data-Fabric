@@ -25,7 +25,7 @@ with st.sidebar:
     selected = option_menu('Tiranga Textiles',
                            
                            ['Taka Production',
-                            'Karigar Performance'],
+                            'Workers Performance'],
                            
                            icons = ['activity', 'bi bi-person-gear'],
                            
@@ -49,7 +49,7 @@ if (selected == 'Taka Production'):
     # total = st.number_input('Enter Total')
     # # total = chota_panna + bada_panna
 
-    # # Create a new row entry for the Karigar
+    # # Create a new row entry for the Workers
     # new_row = [str(dates), chota_panna, bada_panna, total]
 
     # # Append the new row to the Google Sheet
@@ -223,9 +223,9 @@ if (selected == 'Taka Production'):
         st.plotly_chart(fig)
     
 
-if (selected == 'Karigar Performance'):
+if (selected == 'Workers Performance'):
 
-    st.title('Karigar Performance By Date')
+    st.title('Workers Performance By Date')
 
     # Open the Google Sheet by its name
     sheet_name = 'Karigar Performance(24 looms)'
